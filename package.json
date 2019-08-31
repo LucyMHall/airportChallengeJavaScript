@@ -1,0 +1,17 @@
+{
+  "name": "air_plane_challenge_js",
+  "version": "1.0.0",
+  "description": "airplane challenge in javascript",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "LucyMHall",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^6.3.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "jest": "^24.9.0"
+  }
+}
