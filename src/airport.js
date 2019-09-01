@@ -1,6 +1,7 @@
 class Airport {
-  constructor() {
+  constructor(capacity = 2) {
     this.numberOfPlanes = 0;
+    this.capacity = capacity;
   }
 
   getNumberOfPlanes() {
@@ -8,7 +9,9 @@ class Airport {
   }
 
   land(plane) {
-    this.numberOfPlanes += 1;
+    if (this.numberOfPlanes !== this.capacity) {
+      this.numberOfPlanes += 1;
+    }
     return this.numberOfPlanes;
   }
 }

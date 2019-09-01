@@ -11,4 +11,14 @@ describe('#getNumberOfPlanes', () => {
     airportA.land(fakePlane);
     expect(airportA.getNumberOfPlanes()).toBe(1);
   });
+  it('does not increase beyond the capacity', () => {
+    const airportA = new Airport();
+    const fakePlane1 = {};
+    airportA.land(fakePlane1);
+    const fakePlane2 = {};
+    airportA.land(fakePlane2);
+    const fakePlane3 = {};
+    airportA.land(fakePlane3);
+    expect(airportA.getNumberOfPlanes()).toBe(2);
+  });
 });
