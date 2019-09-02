@@ -1,18 +1,22 @@
 class Airport {
   constructor() {
-    this.numberOfPlanes = 0;
+    this.landedPlanes = [];
   }
 
   getNumberOfPlanes() {
-    return this.numberOfPlanes;
+    return this.landedPlanes.length;
   }
 
-  land() {
-    this.numberOfPlanes += 1;
+  land(plane) {
+    if (this.landedPlanes.includes(plane)) {
+      throw 'Plane already in airport';
+    } else {
+      this.landedPlanes.push(plane);
+    }
   }
 
-  takeOff() {
-    this.numberOfPlanes -= 1;
+  takeOff(plane) {
+    this.landedPlanes = this.landedPlanes.filter((listedPlane) => listedPlane !== plane);
   }
 }
 exports.Airport = Airport;
