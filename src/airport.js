@@ -10,5 +10,9 @@ class Airport {
   land() {
     this.numberOfPlanes += 1;
   }
+
+  takeOff() {
+    this.numberOfPlanes -= 1;
+  }
 }
 exports.Airport = Airport;

@@ -14,3 +14,12 @@ describe('#land', () => {
     expect(airportA.getNumberOfPlanes()).toBe(1);
   });
 });
+
+describe('#takeOff', () => {
+  it('decreases the number of planes in an airport by 1', () => {
+    const airportA = new Airport();
+    airportA.land();
+    airportA.takeOff();
+    expect(airportA.getNumberOfPlanes()).toBe(0);
+  });
+});
