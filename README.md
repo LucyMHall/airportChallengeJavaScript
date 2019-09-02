@@ -13,4 +13,4 @@
   - a plane cannot land in an airport which has reached it's capacity
 
 ## Manual Feature Test
-![Manual Feature Test of Airport](/images/Screenshot 2019-09-02 at 12.11.10.png)
+![Manual Feature Test for Airport Challenge in Javascript](images/2019/09/manual-feature-test-for-airport-challenge-in-javascript.png)
