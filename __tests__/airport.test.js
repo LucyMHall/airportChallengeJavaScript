@@ -36,6 +36,13 @@ describe('#land', () => {
       airportA.land(mockPlane3);
     }).toThrow();
   });
+  it('cannot land a plane if the airport is at its specified capacity', () => {
+    const airportB = new Airport(1);
+    airportB.land(mockPlane);
+    expect(() => {
+      airportB.land(mockPlane2);
+    }).toThrow();
+  });
 });
 
 describe('#takeOff', () => {
