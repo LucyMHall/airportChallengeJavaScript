@@ -10,9 +10,9 @@ class Airport {
 
   land(plane) {
     if (this._hasPlaneInAirport(plane)) {
-      throw 'Plane already in airport';
+      throw new Error('Plane already in airport');
     } else if (this._atCapacity()) {
-      throw 'Airport is at capacity'
+      throw new Error('Airport is at capacity');
     } else {
       this.landedPlanes.push(plane);
     }
@@ -20,7 +20,7 @@ class Airport {
 
   takeOff(plane) {
     if (!this._hasPlaneInAirport(plane)) {
-      throw 'Plane is not in the airport';
+      throw new Error('Plane is not in the airport');
     } else {
       this.landedPlanes = this.landedPlanes.filter((listedPlane) => listedPlane !== plane);
     }
@@ -31,7 +31,7 @@ class Airport {
   }
 
   _atCapacity() {
-    return this.getNumberOfPlanes() == this.capacity;
+    return this.getNumberOfPlanes() === this.capacity;
   }
 }
 exports.Airport = Airport;

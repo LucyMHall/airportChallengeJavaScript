@@ -27,21 +27,21 @@ describe('#land', () => {
     airportA.land(mockPlane);
     expect(() => {
       airportA.land(mockPlane);
-    }).toThrow();
+    }).toThrow('Plane already in airport');
   });
   it('cannot land a plane if the airport is at default capacity', () => {
     airportA.land(mockPlane);
     airportA.land(mockPlane2);
     expect(() => {
       airportA.land(mockPlane3);
-    }).toThrow();
+    }).toThrow('Airport is at capacity');
   });
   it('cannot land a plane if the airport is at its specified capacity', () => {
     const airportB = new Airport(1);
     airportB.land(mockPlane);
     expect(() => {
       airportB.land(mockPlane2);
-    }).toThrow();
+    }).toThrow('Airport is at capacity');
   });
 });
 
@@ -54,6 +54,6 @@ describe('#takeOff', () => {
   it('cannot takeOff a plane which is not in the airport', () => {
     expect(() => {
       airportA.takeOff(mockPlane);
-    }).toThrow();
+    }).toThrow('Plane is not in the airport');
   });
 });
