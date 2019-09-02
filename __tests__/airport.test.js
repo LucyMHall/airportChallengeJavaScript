@@ -2,10 +2,14 @@ const { Airport } = require('../src/airport');
 
 let airportA;
 let mockPlane;
+let mockPlane2;
+let mockPlane3;
 
 beforeEach(() => {
   airportA = new Airport();
   mockPlane = {};
+  mockPlane2 = {};
+  mockPlane3 = {};
 });
 
 describe('#getNumberOfPlanes', () => {
@@ -23,6 +27,13 @@ describe('#land', () => {
     airportA.land(mockPlane);
     expect(() => {
       airportA.land(mockPlane);
+    }).toThrow();
+  });
+  it('cannot land a plane if the airport is at default capacity', () => {
+    airportA.land(mockPlane);
+    airportA.land(mockPlane2);
+    expect(() => {
+      airportA.land(mockPlane3);
     }).toThrow();
   });
 });

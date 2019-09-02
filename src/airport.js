@@ -1,6 +1,7 @@
 class Airport {
-  constructor() {
+  constructor(capacity = 2) {
     this.landedPlanes = [];
+    this.capacity = capacity;
   }
 
   getNumberOfPlanes() {
@@ -10,6 +11,8 @@ class Airport {
   land(plane) {
     if (this._hasPlaneInAirport(plane)) {
       throw 'Plane already in airport';
+    } else if (this._atCapacity()) {
+      throw 'Airport is at capacity'
     } else {
       this.landedPlanes.push(plane);
     }
@@ -25,6 +28,10 @@ class Airport {
 
   _hasPlaneInAirport(plane) {
     return this.landedPlanes.includes(plane);
+  }
+
+  _atCapacity() {
+    return this.getNumberOfPlanes() == this.capacity;
   }
 }
 exports.Airport = Airport;
