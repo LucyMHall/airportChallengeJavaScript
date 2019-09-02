@@ -16,7 +16,11 @@ class Airport {
   }
 
   takeOff(plane) {
-    this.landedPlanes = this.landedPlanes.filter((listedPlane) => listedPlane !== plane);
+    if (!this.landedPlanes.includes(plane)) {
+      throw 'Plane is not in the airport';
+    } else {
+      this.landedPlanes = this.landedPlanes.filter((listedPlane) => listedPlane !== plane);
+    }
   }
 }
 exports.Airport = Airport;

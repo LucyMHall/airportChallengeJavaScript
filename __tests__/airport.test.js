@@ -32,4 +32,11 @@ describe('#takeOff', () => {
     airportA.takeOff(mockPlane);
     expect(airportA.getNumberOfPlanes()).toBe(0);
   });
+  it('cannot takeOff a plane which is not in the airport', () => {
+    const airportA = new Airport();
+    const mockPlane = {};
+    expect(() => {
+      airportA.takeOff(mockPlane);
+    }).toThrow();
+  });
 });
