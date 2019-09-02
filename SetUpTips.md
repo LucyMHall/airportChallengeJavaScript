@@ -110,6 +110,10 @@ const methodName = () => {
 - `this._whateverTheFunctionIsCalled`
 ***
 
+# Running a node app
+- `node`
+- `const { className } = require('../path/to/doc.js')` - this is the same as the line in tests
+
 # Common Errors
 - semi-colons (stylistic but useful)
 - explicit returns necessary
