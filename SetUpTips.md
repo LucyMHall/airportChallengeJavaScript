@@ -53,7 +53,7 @@ describe('#nameOfMethod', () => {
 
 ## Do a before each
 `beforeEach(() => { ... });`
-
+- NOTE: Compiler doesn't know that beforeEach is is going to be called so you have to declare the variable above `let variableName;`
 ***
 
 
