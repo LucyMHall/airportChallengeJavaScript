@@ -106,6 +106,8 @@ const methodName = () => {
 ## Indicating functions are private
 - `_nameOfPrivateMethod`
 
+## Using functions in other functions
+- `this._whateverTheFunctionIsCalled`
 ***
 
 # Common Errors
